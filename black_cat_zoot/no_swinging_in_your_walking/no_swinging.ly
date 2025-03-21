@@ -34,28 +34,43 @@ Good luck with LilyPond!  Happy engraving. 1
 \version "2.16.0"  % necessary for upgrading to future LilyPond versions.
 
 
+\header{
+  title = "Black Cat Zoot - No Swinging In Your Walking"
+  subtitle = "Bass - E-A-D-G"
+  copyright = "All credits to the original authors of this music"
+}
 
-
+\layout {
+  indent = #0
+}
 
 <<
-  \chords { d1:m f d a d:m f a  f 
-			
-			d1:m d:m a a a a d:m d:m
-			d1:m d:m a a a a d:m d:m
-  }
-  \relative c {
+%{
+ \new ChordNames \chordmode { d1:m f d a d:m f a  f 
+		
+		d1:m d:m a a a a d:m d:m
+		d1:m d:m a a a a d:m d:m
+ 
+                d1:m d1:m}
+ %}
+ 	
+  \new Staff \relative c {
   \clef bass 
+  \tempo 4 =220
   \key d \minor
-    d4-"intro" d e e | f f as a | d,4 d e e | f f as a |
+    \mark "Intro" 
+         d4 d e e | f f as a | d,4 d e e | f f as a |
 	 d,4 d e e | f f as a | r4 a2 g4 f g f e \break
 	 
-	d-"chorus" f a f | c' b bes a | a, cis e d | a a a a |
+    \mark "Chorus"
+	d f a f | c' b bes a | a, cis e d | a e a b |
 	cis cis  e e | g g e cis | d e f d | e a f g \break
 	
-		d f a f | c' b bes a | a, cis e d | a e a c |
+		d f a f | c' b bes a | a, cis e d | a e a b |
 	cis cis  e e | g g e cis | d e f d | e a f g \break
 	
-	d-"Verse" f a f | d f bes a | g a g f | e f e d
+    \mark "Verse"
+	d f a f | d f bes a | g a g f | e f e d
 	d f a f | d f bes a | g a g f | e f e d \break
 	
 	d f a f | d f bes a | g a g f | e f e d
@@ -63,7 +78,7 @@ Good luck with LilyPond!  Happy engraving. 1
 	
 	
   }
-  
+
 >>
 
 
