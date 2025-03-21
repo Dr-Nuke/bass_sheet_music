@@ -34,20 +34,15 @@ Good luck with LilyPond!  Happy engraving. 1
 \version "2.16.0"  % necessary for upgrading to future LilyPond versions.
 
 
-\header{
-  title = "no swinging in your walking"
-  subtitle = "Kbass"
-}
 
 
-\layout {
-  indent = #0
-}
+
 <<
   \chords { d1:m f d a d:m f a  f 
 			
 			d1:m d:m a a a a d:m d:m
-			d1:m d:m a a a a d:m d:m}
+			d1:m d:m a a a a d:m d:m
+  }
   \relative c {
   \clef bass 
   \key d \minor
